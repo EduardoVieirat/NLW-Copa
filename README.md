@@ -4,7 +4,7 @@
 
 > Trilha Explorer
 
-Projeto construido do evento Next Level da Rocketseat
+Projeto construido do evento Next Level Week da Rocketseat
 
 [Clique aqui para acessar](https://eduardovieirat.github.io/NLW-Copa/)
 
