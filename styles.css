@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* It's making the width of the element the same as the content inside it. */
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --card-title-border-color-primary: #746615;
+  --card-color-primary: #f7dd43;
+  --card-bg-color: #121214;
+  --bg: url(./assets/bg-yellow.svg);
+}
+
+body.blue {
+  --card-title-border-color-primary: #338af3;
+  --card-color-primary: #338af3;
+  --card-bg-color: #202024;
+  --bg: url(./assets/bg-blue.svg);
+}
+body.green {
+  --card-title-border-color-primary: #047c3f;
+  --card-color-primary: #047c3f;
+  --card-bg-color: #1a1f1b;
+  --bg: url(./assets/bg-green.svg);
+}
+
+body {
+  /* background-color: #121214;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat; */
+
+  background: #121214 var(--bg) no-repeat top center/cover;
+}
+/* Config de App */
+#app {
+  /* encaixar o conteúdo dentro dessa caixa */
+  /* It's making the width of the element the same as the content inside it. */
+  width: fit-content;
+
+  /* It's adding a margin of 52px to the top and bottom of the element and auto to the left and right
+  of the element. */
+  margin: 52px auto;
+}
+
+header {
+  margin-bottom: 63px;
+  text-align: center;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+ul {
+  /* It's removing the bullet points from the list. */
+  list-style: none;
+}
+.card {
+  padding: 32px 23px;
+  text-align: center;
+
+  background: var(--card-bg-color);
+  border-bottom: 2px solid var(--card-color-primary);
+  border-radius: 6px;
+}
+/* It's aligning the text in the middle of the card. */
+.card h2 {
+  /* It's making the elements inside the li tag align horizontally. */
+  display: flex;
+
+  /* It's adding a space between the elements. */
+  gap: 16px;
+
+  /* It's aligning the elements inside the li tag horizontally. */
+  justify-content: center;
+
+  /* It's aligning the elements inside the li tag vertically. */
+  align-items: center;
+
+  /* It's adding a padding of 8px to the top and bottom of the element and 16px to the left and right
+  of the element. */
+  padding: 8px 16px;
+
+  /* It's adding a border of 1px to the element. */
+  border: 1px solid var(--card-title-border-color-primary);
+
+  /* It's making the border of the element round. */
+  border-radius: 6px;
+
+  /* It's making the width of the element the same as the content inside it. */
+  width: fit-content;
+
+  /* It's aligning the text in the middle of the card. */
+  margin-inline: auto;
+
+  /* It's adding a margin of 53px to the bottom of the element. */
+  margin-bottom: 53px;
+
+  /* It's changing the color of the text inside the h2 tag. */
+  color: #f7dd43;
+}
+
+/* Changing the color of the text inside the span tag. */
+.card h2 span {
+  color: #e1e1e6;
+  font-size: 14px;
+  /* It's changing the text to uppercase. */
+  text-transform: uppercase;
+}
+
+/* It's making the elements inside the li tag align horizontally. It's aligning the elements inside the
+li tag vertically. It's adding a space between the elements. */
+.card ul li {
+  /* It's making the elements inside the li tag align horizontally. */
+  display: flex;
+
+  /* It's aligning the elements inside the li tag vertically. */
+  align-items: center;
+
+  /* It's adding a space between the elements. */
+  justify-content: space-between;
+}
+
+/* It's making the elements inside the ul tag align vertically. It's adding a space between the
+elements. */
+.card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* It's adding a padding of 24px to the top of the element and a border of 1px to the top of the
+element. */
+.card ul li + li {
+  padding-top: 24px;
+  border-top: 1px solid #323238;
+}
+.card ul li strong {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 125%;
+
+  color: #e1e1e6;
+}
+
+/* ANIMAÇÕES */
+
+.card ul li img:hover,
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card,
+.card ul li img {
+  transition: transform 0.2s;
+}
+
+.card {
+  animation: anime 0.9s 0.1s backwards;
+}
+
+.card {
+  animation-delay: 0s;
+}
+
+@keyframes anime {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+@media (min-width: 700px) {
+  #cards {
+    max-width: 660px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
